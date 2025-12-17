@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SaveNow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-transition">
+
+<header class="navbar">
+  <div class="logo">Save<span>Now</span></div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#coupons">Coupons</a>
+    <a href="plus.html" class="gold-link">SaveNow+ Exclusive</a>
+    <a href="#contact">Contact</a>
+    <a href="terms.html">Terms & Conditions</a>
+
+  </nav>
+
+  <!-- RIGHT SIDE ICONS -->
+  <div class="nav-right">
+    <!-- PROFILE ICON -->
+    <a href="#" class="profile-btn" onclick="openProfile()">👤</a>
+
+    <!-- CART ICON -->
+    <a href="checkout.html" class="cart-btn">
+      🛒 <span id="cartCount">0</span>
+    </a>
+  </div>
+</header>
+
+
+
+
+
+<!-- HOME -->
+<section id="home" class="hero section-space">
+  <h1>Save Big on your Bills!! Get Cashback in 2 Days!!</h1>
+  <p>Premium cashback & verified coupons</p>
+
+  <input
+  type="text"
+  id="search"
+  placeholder="Search coupons..."
+  onkeyup="searchCoupons()"
+/>
+
+</section>
+
+<!-- USER DASHBOARD -->
+<section class="section section-space dashboard">
+  <h2>Your Dashboard</h2>
+
+  <div class="dashboard-cards">
+
+    <div class="dash-card">
+      <h4>Total Savings</h4>
+      <p>₹<span id="dashSavings">0</span></p>
+    </div>
+
+    <div class="dash-card">
+      <h4>Coupons Purchased</h4>
+      <p><span id="dashCoupons">0</span></p>
+    </div>
+
+    <div class="dash-card">
+      <h4>Membership Type</h4>
+      <p><span id="dashMembership">Free</span></p>
+    </div>
+
+    <div class="dash-card">
+      <h4>Membership Validity</h4>
+      <p><span id="dashValidity">--</span></p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- COUPONS SECTION -->
+<section id="coupons" class="section section-space">
+  <h2>Available Coupons</h2>
+
+  <div class="products-grid">
+
+    <!-- 1 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/140x70?text=Amazon" class="product-img" alt="Amazon">
+      <h4>Amazon</h4>
+      <span class="cashback">₹50 Cashback</span>
+      <button onclick="addToCart(50)">Add to Cart</button>
+    </div>
+
+    <!-- 2 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/140x70?text=Flipkart" class="product-img" alt="Flipkart">
+      <h4>Flipkart</h4>
+      <span class="cashback">₹75 Cashback</span>
+      <button onclick="addToCart(75)">Add to Cart</button>
+    </div>
+
+    <!-- 3 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/140x70?text=Myntra" class="product-img" alt="Myntra">
+      <h4>Myntra</h4>
+      <span class="cashback">₹40 Cashback</span>
+      <button onclick="addToCart(40)">Add to Cart</button>
+    </div>
+
+    <!-- 4 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/140x70?text=Ajio" class="product-img" alt="Ajio">
+      <h4>Ajio</h4>
+      <span class="cashback">₹60 Cashback</span>
+      <button onclick="addToCart(60)">Add to Cart</button>
+    </div>
+
+    <!-- 5 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/140x70?text=Swiggy" class="product-img" alt="Swiggy">
+      <h4>Swiggy</h4>
+      <span class="cashback">₹30 Cashback</span>
+      <button onclick="addToCart(30)">Add to Cart</button>
+    </div>
+
+    <!-- 6 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/140x70?text=Zomato" class="product-img" alt="Zomato">
+      <h4>Zomato</h4>
+      <span class="cashback">₹35 Cashback</span>
+      <button onclick="addToCart(35)">Add to Cart</button>
+    </div>
+
+    <!-- 7 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/140x70?text=Uber" class="product-img" alt="Uber">
+      <h4>Uber</h4>
+      <span class="cashback">₹80 Cashback</span>
+      <button onclick="addToCart(80)">Add to Cart</button>
+    </div>
+
+    <!-- 8 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/140x70?text=Ola" class="product-img" alt="Ola">
+      <h4>Ola</h4>
+      <span class="cashback">₹70 Cashback</span>
+      <button onclick="addToCart(70)">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- VIEW ALL BUTTON -->
+  <div class="view-all-wrapper">
+    <button class="view-all-btn" onclick="navigateWithFade('all-coupons.html')">
+
+      View All Coupons
+    </button>
+  </div>
+  
+</section>
+
+
+  
+
+<!-- ================= SPIN THE WHEEL SECTION ================= -->
+<section class="section section-space spin-section">
+
+  <h2 class="spin-title">🎯 Spin the Wheel 🎯</h2>
+
+  <div class="wheel-wrapper">
+    <div id="wheel" class="wheel">
+      <div class="label l1">₹20</div>
+      <div class="label l2">₹80</div>
+      <div class="label l3">₹50</div>
+      <div class="label l4">₹100</div>
+    </div>
+  </div>
+
+  <button id="spinBtn" onclick="spinWheel()">Spin Now</button>
+
+ 
+
+
+  <div class="spin-info" id="spinInfo" style="display: none;">
+    <p>🕒 Last spin: <strong id="lastSpin">Never</strong></p>
+    <p>📅 Next spin available: <strong id="nextSpin">Now</strong></p>
+    <p class="note">⏳ You can spin again after a week!</p>
+  </div>
+
+</section>
+<!-- ================= END SPIN SECTION ================= -->
+
+<!-- UPLOAD BILL SECTION -->
+<section class="section section-space upload-section">
+  <h2>Upload Your Bill</h2>
+
+  <form action="/upload-bill" method="POST" enctype="multipart/form-data" class="upload-form">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <input
+      type="file"
+      name="bill"
+      accept=".pdf,image/*"
+      required
+    >
+
+    <button type="submit">Upload & Verify</button>
+  </form>
+</section>
+
+
+
+
+<!-- CONTACT -->
+<section id="contact" class="section section-space contact-section">
+  <h2>Contact Us</h2>
+
+<form action="/contact" method="POST" class="contact-form">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+  <textarea name="message" placeholder="Your Message"></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+</section>
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <h2>Login / Signup</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="email" id="useremail" placeholder="Email">
+
+    <button onclick="login()">Continue</button>
+
+    <p class="small-text">Demo login (no backend)</p>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

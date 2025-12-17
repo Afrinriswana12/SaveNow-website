@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout | SaveNow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-transition">
+
+
+<header class="navbar">
+  <div class="logo">Save<span>Now</span></div>
+</header>
+
+<section class="section section-space checkout-center">
+  <div class="checkout-card">
+
+    <h2>Checkout</h2>
+
+    <p>
+      Total Coupons:
+      <strong><span id="checkoutCount">0</span></strong>
+    </p>
+
+    <p>
+      Total Cashback:
+      ₹<strong><span id="checkoutSavings">0</span></strong>
+    </p>
+
+    <button onclick="checkout()" class="pulse-btn">
+      Confirm Purchase
+    </button>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
